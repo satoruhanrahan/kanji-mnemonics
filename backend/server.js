@@ -20,6 +20,8 @@ app.use('/api/kanji', kanjiRoutes)
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
+        // Add MongoDB client to the app locals
+        // app.locals.db = client.db('Kanji-Mnemonics');
         // listen for requests
         app.listen(process.env.PORT, () => {
             console.log('connected to db & listening on port', process.env.PORT)
