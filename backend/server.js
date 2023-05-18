@@ -1,12 +1,14 @@
 require('dotenv').config()
 
 const express = require('express')
+const cors = require('cors');
 const mongoose = require('mongoose')
 const kanjiRoutes = require('./routes/kanji.js')
 
 // express app
 const app = express()
-
+// Enable CORS
+app.use(cors());
 // middleware
 app.use(express.json())
 app.use((req, res, next) => {
