@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // pages and components
 import Home from './pages/Home'
+import Kanji from './pages/Kanji'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -14,6 +15,10 @@ function App() {
             <Route
               path="/"
               element={<Home />}
+            />
+            <Route
+              path="/:id"
+              element={<Kanji />}
             />
           </Routes>
         </div>

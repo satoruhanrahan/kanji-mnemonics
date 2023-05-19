@@ -24,7 +24,7 @@ db.getCollection('kanjis').insertMany([
     { "character": "年", "kunyomi": "とし", "meaning": "Year", "mnemonic": "To signal a new year, my nan whacked the clothes line at noon.", "onyomi": "ネン", "components": ["午"] },
     { "character": "出", "kunyomi": "だす、でる", "meaning": "Go Out", "mnemonic": "I went out to the mountains to go shooting.", "onyomi": "シュツ", "components": ["山"] },
     { "character": "本", "kunyomi": "もと", "meaning": "Book", "mnemonic": "I stuck one book on a tree using honey.", "onyomi": "ホン", "components": ["木", "一"] },
-    { "character": "中", "kunyomi": "なか", "meaning": "Book", "mnemonic": "I put the juicy chewing gum right in the middle of my mouth.", "onyomi": "チュウ、ジュウ", "components": ["口"] }
+    { "character": "中", "kunyomi": "なか", "meaning": "Middle", "mnemonic": "I put the juicy chewing gum right in the middle of my mouth.", "onyomi": "チュウ、ジュウ", "components": ["口"] }
 ]);
 
 // Run a find command to view items sold on April 4th, 2014.

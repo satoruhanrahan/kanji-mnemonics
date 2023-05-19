@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+
+header {
+  background-color: rgba(36, 104, 205, 0.15);
+}
+header .container {
+  margin: 0;
+  padding: 10px 20px;
+}
+header a {
+  color: rgba(0, 0, 0, 0.67);
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home {
+  margin: 35px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(0, 0, 0, 0.67);
+}
+.home .kanji {
+  margin-top: 50px;
+}
+.home .kanji-list-item {
+  height: 50px;
+  width: 50px;
+  border: 1px;
+  box-shadow: 2px 2px 2px rgba(36, 104, 205, 0.5);
+  border-style: solid;
+  margin: 5px;
+  float: left;
+  font-size: 30px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 7px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.67);
+}
+.home .kanji-list-item:hover {
+  height: 50px;
+  width: 50px;
+  box-shadow: 4px 4px 4px rgba(36, 104, 205, 0.5);
+}
+
+/*# sourceMappingURL=index.css.map */
