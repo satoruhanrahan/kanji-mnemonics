@@ -1,5 +1,4 @@
 {
-  "homepage": "https://kanji-mnemonics.vercel.app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
