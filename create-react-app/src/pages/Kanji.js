@@ -1,37 +1,37 @@
-// import { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
+import { useParams, useNavigate } from "react-router-dom";
+import KanjiDetails from '../components/KanjiDetails'
 // import { Link } from 'react-router-dom'
-// import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
-
-// components
-// import WorkoutDetails from '../components/WorkoutDetails'
-// import WorkoutForm from '../components/WorkoutForm'
 
 const Kanji = () => {
-    // const { workouts, dispatch } = useWorkoutsContext()
-    // const [kanji, setKanji] = useState(false);
+    const [kanji, setKanji] = useState(false)
+    const { id } = useParams()
+    const api = 'http://localhost:4000/api/kanji/' + id;
+    const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     const fetchKanji = async () => {
-    //         const response = await fetch('http://localhost:4000/api/kanji/'+)
-    //         const json = await response.json()
+    useEffect(() => {
+        const fetchKanji = async () => {
+            const response = await fetch(api)
+            const json = await response.json()
 
-    //         if (response.ok) {
-    //             setAllKanji(json)
-    //             console.log(response);
-    //             // dispatch({ type: 'SET_WORKOUTS', payload: json })
-    //         }
-    //         // else {
-    //         //     console.log("not ok")
-    //         // }
-    //     }
+            if (response.ok) {
+                setKanji(json)
+            }
+        }
 
-    //     fetchAllKanji()
-    // }, [setAllKanji])
+        fetchKanji()
+    }, [setKanji, api])
 
     return (
         <div className="Kanji">
-            <div>
-                Hello
+            <button className="backButton" onClick={() => navigate(-1)}>Back</button>
+            <button className="nextButton">Next</button>
+            <div className="character">{kanji.character}</div>
+            <KanjiDetails kanji={kanji} />
+
+            <div className="mnemonic">
+                <p>How to remember:</p>
+                <div className="mnemonicText">{kanji.mnemonic}</div>
             </div>
         </div>
     )

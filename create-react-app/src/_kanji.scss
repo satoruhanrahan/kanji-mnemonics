@@ -1,0 +1,83 @@
+$dark-blue-color-faded: rgba(36, 104, 205, .15);
+$dark-blue-color: rgba(36, 104, 205);
+
+.Kanji {
+    button {
+        position: absolute;
+        border-color: $dark-blue-color;
+        border-radius: 5px;
+        height: 45px;
+        width: 100px;
+        box-shadow: 2px 2px 2px $dark-blue-color;
+        font-weight: bold;
+        font-size: 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .nextButton {
+        right: 100px;
+        top: 150px;
+        background-color: $dark-blue-color-faded;
+    }
+
+    .backButton {
+        position: absolute;
+        right: 220px;
+        top: 150px;
+        background-color: white;
+    }
+
+    .character {
+        width: 20vw;
+        height: 20vw;
+        box-shadow: 2px 2px 2px $dark-blue-color;
+        border-style: solid;
+        border-color: $dark-blue-color;
+        margin: 25px;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 14vw;
+        float: left;
+    }
+
+    .kanji-details {
+        margin-left: 28vw;
+        width: 70vw;
+
+        .meaning {
+            font-size: 35px;
+            font-weight: bold;
+            padding-top: 30px;
+        }
+
+        .sub-heading {
+            color: $dark-blue-color;
+            padding-top: 30px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .value {
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 20px;
+        }
+    }
+
+    .mnemonic {
+        margin-top: 100px;
+        margin-left: 30px;
+        font-size: 20px;
+        // font-weight: bold;
+
+        .mnemonicText {
+            width: 90vw;
+            height: 100px;
+            background-color: $dark-blue-color-faded;
+            padding: 20px;
+        }
+    }
+}
