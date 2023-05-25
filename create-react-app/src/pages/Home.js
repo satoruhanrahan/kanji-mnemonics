@@ -20,9 +20,9 @@ const Home = () => {
                 // console.log(response);
                 // dispatch({ type: 'SET_WORKOUTS', payload: json })
             }
-            else {
-                setAllKanji(false)
-            }
+            // else {
+            //     setAllKanji(false)
+            // }
         }
 
         fetchAllKanji()
@@ -39,10 +39,10 @@ const Home = () => {
             </div>
             <div className="kanji">
                 <h2>First Grade Kanji</h2>
-                {allKanji ? allKanji.map((kanji) => (
+                {allKanji && allKanji.map((kanji) => (
                     <Link to={"/" + kanji._id} className="kanji-list-item" key={kanji.meaning}>{kanji.character}</Link>
                     // <WorkoutDetails key={workout._id} workout={workout} />
-                )) : <p>Error fetching data</p>}
+                ))}
             </div>
             {/* <WorkoutForm /> */}
         </div>
