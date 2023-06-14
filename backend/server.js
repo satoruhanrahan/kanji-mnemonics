@@ -36,13 +36,13 @@ mongoose.connect(process.env.MONGO_URI)
     })
 
 // routes
-// app.use('/api/kanji', kanjiRoutes)
-app.use('/api/kanji', require(path.join(__dirname, 'routes', 'kanji.js')));
+app.use('/api/kanji', kanjiRoutes)
+// app.use('/api/kanji', require(path.join(__dirname, 'routes', 'kanji.js')));
 
 // static files (build of your frontend)
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../create-react-app', 'build')));
-    app.get('/*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../create-react-app', 'build', 'index.html'));
-    })
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static(path.join(__dirname, '../create-react-app', 'build')));
+//     app.get('/*', (req, res) => {
+//         res.sendFile(path.join(__dirname, '../create-react-app', 'build', 'index.html'));
+//     })
+// }
