@@ -5,6 +5,7 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors');
 const mongoose = require('mongoose')
+const path = require('path');
 const kanjiRoutes = require('./routes/kanji.js')
 
 // express app
@@ -20,9 +21,6 @@ app.use((req, res, next) => {
 // port
 const port = process.env.PORT || 4000;
 
-// routes
-app.use('/api/kanji', kanjiRoutes)
-
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
@@ -37,12 +35,13 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     })
 
+// routes
+app.use('/api/kanji', kanjiRoutes)
+
 // static files (build of your frontend)
 if (process.env.NODE_ENV === 'production') {
-    //     app.use((req) => {
-    //         express.static(req.path.join(__dirname, '../create-react-app', 'build'))
-    //     })
+    app.use(express.static(path.join(__dirname, '../frontend', 'build')));
     app.get('/*', (req, res) => {
-        res.sendFile(req.path.join(__dirname, '../create-react-app', 'build', 'index.html'));
+        res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'));
     })
 }
