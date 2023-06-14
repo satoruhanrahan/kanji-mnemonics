@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // routes
 // app.use('/api/kanji', kanjiRoutes)
-app.use('/api/kanji', require(path.join(__dirname, 'api', 'routes', 'kanji.js')));
+app.use('/api/kanji', require(path.join(__dirname, 'routes', 'kanji.js')));
 
 // static files (build of your frontend)
 if (process.env.NODE_ENV === 'production') {
