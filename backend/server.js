@@ -39,8 +39,10 @@ mongoose.connect(process.env.MONGO_URI)
 
 // static files (build of your frontend)
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../create-react-app', 'build')));
+    app.use((req) => {
+        express.static(req.path.join(__dirname, '../create-react-app', 'build'))
+    })
     app.get('/*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../create-react-app', 'build', 'index.html'));
+        res.sendFile(req.path.join(__dirname, '../create-react-app', 'build', 'index.html'));
     })
 }
