@@ -1,4 +1,6 @@
-require('dotenv').config()
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
 
 const express = require('express')
 const cors = require('cors');
@@ -15,6 +17,8 @@ app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
 })
+// port
+const port = process.env.PORT || 4000;
 
 // routes
 app.use('/api/kanji', kanjiRoutes)
@@ -25,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI)
         // Add MongoDB client to the app locals
         // app.locals.db = client.db('Kanji-Mnemonics');
         // listen for requests
-        app.listen(process.env.PORT, () => {
+        app.listen(port, () => {
             console.log('connected to db & listening on port', process.env.PORT)
         })
     })
@@ -33,4 +37,10 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     })
 
-
+// static files (build of your frontend)
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../create-react-app', 'build')));
+    app.get('/*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../create-react-app', 'build', 'index.html'));
+    })
+}

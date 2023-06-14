@@ -12,7 +12,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchAllKanji = async () => {
-            const response = await fetch('http://localhost:4000/api/kanji')
+            const response = await fetch('/api/kanji')
             const json = await response.json()
 
             if (response.ok) {

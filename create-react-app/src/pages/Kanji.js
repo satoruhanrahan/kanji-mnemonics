@@ -6,7 +6,7 @@ import KanjiDetails from '../components/KanjiDetails'
 const Kanji = () => {
     const [kanji, setKanji] = useState(false)
     const { id } = useParams()
-    const api = 'http://localhost:4000/api/kanji/' + id;
+    const api = '/api/kanji/' + id;
     const navigate = useNavigate();
 
     useEffect(() => {
