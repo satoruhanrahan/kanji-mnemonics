@@ -1,32 +1,17 @@
-import { useEffect, useState } from "react"
+import { useEffect, useContext } from "react"
 import { Link } from 'react-router-dom'
-// import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
-
-// components
-// import WorkoutDetails from '../components/WorkoutDetails'
-// import WorkoutForm from '../components/WorkoutForm'
+import { KanjiContext } from "../App"
+import { fetchKanji } from "../hooks/fetchKanji"
 
 const Home = () => {
-    // const { workouts, dispatch } = useWorkoutsContext()
-    const [allKanji, setAllKanji] = useState(false);
+    const { kanji, setKanji } = useContext(KanjiContext)
 
     useEffect(() => {
-        const fetchAllKanji = async () => {
-            const response = await fetch('/api/kanji')
-            const json = await response.json()
+        fetchKanji().then((json) => {
+            setKanji(json)
+        })
 
-            if (response.ok) {
-                setAllKanji(json)
-                // console.log(response);
-                // dispatch({ type: 'SET_WORKOUTS', payload: json })
-            }
-            // else {
-            //     setAllKanji(false)
-            // }
-        }
-
-        fetchAllKanji()
-    }, [setAllKanji])
+    }, [setKanji])
 
     return (
         <div className="home">
@@ -39,12 +24,10 @@ const Home = () => {
             </div>
             <div className="kanji">
                 <h2>First Grade Kanji</h2>
-                {allKanji && allKanji.map((kanji) => (
+                {kanji && kanji.map((kanji) => (
                     <Link to={"/" + kanji._id} className="kanji-list-item" key={kanji.meaning}>{kanji.character}</Link>
-                    // <WorkoutDetails key={workout._id} workout={workout} />
                 ))}
             </div>
-            {/* <WorkoutForm /> */}
         </div>
     )
 }

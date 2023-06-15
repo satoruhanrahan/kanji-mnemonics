@@ -46,6 +46,11 @@ $dark-blue-color: rgba(36, 104, 205);
     .kanji-details {
         margin-left: 28vw;
         width: 70vw;
+        display: flex;
+
+        .components {
+            padding-top: 183px;
+        }
 
         .meaning {
             font-size: 35px;
@@ -58,12 +63,14 @@ $dark-blue-color: rgba(36, 104, 205);
             padding-top: 30px;
             font-size: 20px;
             font-weight: 500;
+            width: 35vw;
         }
 
         .value {
             font-weight: bold;
             font-size: 20px;
             padding-top: 20px;
+            width: 35vw;
         }
     }
 
@@ -78,6 +85,10 @@ $dark-blue-color: rgba(36, 104, 205);
             height: 100px;
             background-color: $dark-blue-color-faded;
             padding: 20px;
+
+            b {
+                color: $dark-blue-color;
+            }
         }
     }
 }

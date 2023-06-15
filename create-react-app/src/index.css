@@ -67,6 +67,10 @@
 .Kanji .kanji-details {
   margin-left: 28vw;
   width: 70vw;
+  display: flex;
+}
+.Kanji .kanji-details .components {
+  padding-top: 183px;
 }
 .Kanji .kanji-details .meaning {
   font-size: 35px;
@@ -78,11 +82,13 @@
   padding-top: 30px;
   font-size: 20px;
   font-weight: 500;
+  width: 35vw;
 }
 .Kanji .kanji-details .value {
   font-weight: bold;
   font-size: 20px;
   padding-top: 20px;
+  width: 35vw;
 }
 .Kanji .mnemonic {
   margin-top: 100px;
@@ -94,6 +100,9 @@
   height: 100px;
   background-color: rgba(36, 104, 205, 0.15);
   padding: 20px;
+}
+.Kanji .mnemonic .mnemonicText b {
+  color: rgb(36, 104, 205);
 }
 
 body {
