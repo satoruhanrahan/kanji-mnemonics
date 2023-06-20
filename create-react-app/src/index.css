@@ -105,6 +105,44 @@
   color: rgb(36, 104, 205);
 }
 
+form h3 {
+  text-align: center;
+  width: 100%;
+}
+form div {
+  height: 300px;
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+form div label {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+form div input {
+  width: 200px;
+  margin-top: 5px;
+  text-align: center;
+}
+form div button {
+  margin-top: 30px;
+  background-color: rgba(36, 104, 205, 0.15);
+  border-color: rgba(36, 104, 205, 0.15);
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
+}
+form div button:hover {
+  cursor: pointer;
+}
+form div .error {
+  color: red;
+  margin-top: 20px;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -121,6 +159,40 @@ header .container {
 header a {
   color: rgba(0, 0, 0, 0.82);
   text-decoration: none;
+}
+
+nav {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+}
+nav a {
+  position: relative;
+  top: -14px;
+  right: 10px;
+  margin: 10px;
+}
+nav button {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.82);
+  border-color: rgba(36, 104, 205, 0.15);
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
+  position: absolute;
+  top: -14px;
+  right: 10px;
+}
+nav button:hover {
+  cursor: pointer;
+}
+nav .username {
+  margin-right: 20px;
+  position: absolute;
+  top: -10px;
+  right: 90px;
+  width: 200px;
+  text-align: right;
 }
 
 /*# sourceMappingURL=index.css.map */

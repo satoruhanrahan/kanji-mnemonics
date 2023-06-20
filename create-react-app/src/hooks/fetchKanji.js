@@ -13,4 +13,7 @@ export const fetchKanji = async () => {
 
         return json
     }
+    else {
+        console.log(response)
+    }
 }

@@ -7,6 +7,7 @@ const cors = require('cors');
 const mongoose = require('mongoose')
 const path = require('path');
 const kanjiRoutes = require('./routes/kanji.js')
+const userRoutes = require('./routes/user.js')
 
 // express app
 const app = express()
@@ -37,7 +38,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // routes
 app.use('/api/kanji', kanjiRoutes)
-// app.use('/api/kanji', require(path.join(__dirname, 'routes', 'kanji.js')));
+app.use('/api/user', userRoutes)
 
 // static files (build of your frontend)
 if (process.env.NODE_ENV === 'production') {

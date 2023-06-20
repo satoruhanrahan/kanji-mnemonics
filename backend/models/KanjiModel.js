@@ -8,7 +8,7 @@ const kanjiSchema = new Schema({
         required: true
     },
     kunyomi: {
-        type: String,
+        type: Array,
         required: true
     },
     meaning: {
@@ -20,7 +20,7 @@ const kanjiSchema = new Schema({
         required: true
     },
     onyomi: {
-        type: String,
+        type: Array,
         required: true
     },
     components: {
