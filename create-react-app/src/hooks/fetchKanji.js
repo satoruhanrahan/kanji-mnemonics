@@ -1,14 +1,19 @@
 import DOMPurify from 'dompurify'
 
 export const fetchKanji = async () => {
-    // const response = await fetch('/api/kanji')
-    const response = await fetch('http://localhost:4000/api/kanji')
+    let api = "/api/kanji";
+    if (process.env.REACT_APP_NODE_ENV === 'development') {
+        api = 'http://localhost:4000' + api
+    }
+
+    const response = await fetch(api)
     const json = await response.json()
 
     if (response.ok) {
-        console.log(json)
-        json.forEach((element, index) => {
-            json[index].mnemonic = DOMPurify.sanitize(json[index].mnemonic)
+        json.forEach((kanji, kanjiIndex) => {
+            json[kanjiIndex].mnemonic.forEach((mnemonic, index) => {
+                json[index].mnemonic[index].text = DOMPurify.sanitize(json[index].mnemonic[index].text)
+            })
         })
 
         return json

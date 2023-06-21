@@ -1,5 +1,4 @@
 const KanjiDetails = ({ kanji }) => {
-    console.log(kanji)
     return (
         <div className="kanji-details">
 
