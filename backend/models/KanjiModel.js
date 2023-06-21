@@ -15,10 +15,18 @@ const kanjiSchema = new Schema({
         type: String,
         required: true
     },
-    mnemonic: {
-        type: String,
-        required: true
-    },
+    mnemonic: [
+        {
+            text: {
+                type: String,
+                required: true
+            },
+            user_id: {
+                type: Array,
+                required: true
+            }
+        }
+    ],
     onyomi: {
         type: Array,
         required: true
