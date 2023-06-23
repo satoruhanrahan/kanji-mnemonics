@@ -21,8 +21,8 @@ const kanjiSchema = new Schema({
                 type: String,
                 required: true
             },
-            user_id: {
-                type: Array,
+            username: {
+                type: String,
                 required: true
             }
         }

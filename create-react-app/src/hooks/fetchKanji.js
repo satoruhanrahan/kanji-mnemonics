@@ -3,7 +3,7 @@ import DOMPurify from 'dompurify'
 export const fetchKanji = async () => {
     let api = "/api/kanji";
     if (process.env.REACT_APP_NODE_ENV === 'development') {
-        api = 'http://localhost:4000' + api
+        api = 'http://localhost:' + process.env.REACT_APP_BACKEND_PORT + api
     }
 
     const response = await fetch(api)
@@ -11,8 +11,8 @@ export const fetchKanji = async () => {
 
     if (response.ok) {
         json.forEach((kanji, kanjiIndex) => {
-            json[kanjiIndex].mnemonic.forEach((mnemonic, index) => {
-                json[index].mnemonic[index].text = DOMPurify.sanitize(json[index].mnemonic[index].text)
+            json[kanjiIndex].mnemonic.forEach((mnemonic, mnemonicIndex) => {
+                json[kanjiIndex].mnemonic[mnemonicIndex].text = DOMPurify.sanitize(json[kanjiIndex].mnemonic[mnemonicIndex].text)
             })
         })
 

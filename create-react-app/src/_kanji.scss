@@ -78,16 +78,33 @@ $dark-blue-color: rgba(36, 104, 205);
         margin-top: 100px;
         margin-left: 30px;
         font-size: 20px;
-        // font-weight: bold;
 
-        .mnemonicText {
+        .textDiv {
             width: 90vw;
             height: 100px;
             background-color: $dark-blue-color-faded;
             padding: 20px;
+            border: none;
+
+            &:focus {
+                border: 2px solid;
+                border-radius: 5px;
+            }
 
             b {
                 color: $dark-blue-color;
+            }
+        }
+
+        svg {
+            float: right;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:focus {
+                outline: none;
             }
         }
     }

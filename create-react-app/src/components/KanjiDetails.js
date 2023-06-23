@@ -1,17 +1,17 @@
-const KanjiDetails = ({ kanji }) => {
+const KanjiDetails = ({ selectedKanji }) => {
     return (
         <div className="kanji-details">
 
             <div className="readings">
-                <div className="meaning">{kanji.meaning}</div>
+                <div className="meaning">{selectedKanji.meaning}</div>
                 <div className="sub-heading">Onyomi</div>
-                <div className="value">{kanji.onyomi.join("、")}</div>
+                <div className="value">{selectedKanji.onyomi.join("、")}</div>
                 <div className="sub-heading">Kunyomi</div>
-                <div className="value">{kanji.kunyomi.join("、")}</div>
+                <div className="value">{selectedKanji.kunyomi.join("、")}</div>
             </div>
-            {kanji.components.length > 0 && <div className="components">
+            {selectedKanji.components.length > 0 && <div className="components">
                 <div className="sub-heading">Components</div>
-                <div className="value">{kanji.components.join("、")}</div>
+                <div className="value">{selectedKanji.components.join("、")}</div>
             </div>}
         </div>
     )
