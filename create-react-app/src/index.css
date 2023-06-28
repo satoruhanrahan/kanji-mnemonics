@@ -46,11 +46,17 @@
   top: 150px;
   background-color: rgba(36, 104, 205, 0.15);
 }
+.Kanji .nextButton:active {
+  box-shadow: 0px 0px 0px rgb(36, 104, 205);
+}
 .Kanji .backButton {
   position: absolute;
   right: 220px;
   top: 150px;
   background-color: white;
+}
+.Kanji .backButton:active {
+  box-shadow: 0px 0px 0px rgb(36, 104, 205);
 }
 .Kanji .character {
   width: 20vw;

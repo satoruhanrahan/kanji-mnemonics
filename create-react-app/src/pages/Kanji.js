@@ -40,6 +40,8 @@ const Kanji = () => {
     // next button
     function nextKanji() {
         let nextKanjiID = ""
+        // add active class to button for shadow effect
+        document.getElementById("nextButton").classList.add("active")
         // get the index of selected kanji within array of all kanji
         const selectedKanjiIndex = kanji.findIndex(x => x === selectedKanji)
         // if selected kanji is the last in array
@@ -55,10 +57,17 @@ const Kanji = () => {
         navigate("/" + nextKanjiID);
     }
 
+    function back() {
+        // add active class to button for shadow effect
+        document.getElementById("nextButton").classList.add("active")
+        // navigate back
+        navigate(-1)
+    }
+
     return (
         <div className="Kanji">
-            <button className="backButton" onClick={() => navigate(-1)}>Back</button>
-            <button className="nextButton" onClick={() => nextKanji()}>Next</button>
+            <button className="backButton" onClick={() => back()}>Back</button>
+            <button id="nextButton" className="nextButton" onClick={() => nextKanji()}>Next</button>
             <div className="character">{selectedKanji && selectedKanji.character}</div>
             {selectedKanji && <KanjiDetails selectedKanji={selectedKanji} />}
             {selectedKanji && <Mnemonic selectedKanji={selectedKanji} />}
